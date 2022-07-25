@@ -267,18 +267,18 @@ The result will be a folder entitled `dynamic_my_optimizer` containing the build
 >  ```
 
 > **Note**. A nice feature to have before running the simulation is to replace the standard Gazebo texture for the asphalt with that provided along with the repository. To do that, in case of Ubuntu 20.04 with Gazebo 11, simply execute the commands 
-
-```
-$ cd ~/autosim/gazebo
-$ sudo cp road1.jpg /usr/share/gazebo-11/media/materials/textures
-```
-
-while in case of Ubuntu 18.04 with Gazebo 9
-
-```
-$ cd ~/autosim/gazebo
-$ sudo cp road1.jpg /usr/share/gazebo-9/media/materials/textures
-```
+>
+>```
+>$ cd ~/autosim/gazebo
+>$ sudo cp road1.jpg /usr/share/gazebo-11/media/materials/textures
+>```
+>
+>while in case of Ubuntu 18.04 with Gazebo 9
+>
+>```
+>$ cd ~/autosim/gazebo
+>$ sudo cp road1.jpg /usr/share/gazebo-9/media/materials/textures
+>```
 
 Now, you can run in a terminal the command:
 
