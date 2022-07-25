@@ -2,8 +2,9 @@
 <?xml-model href="http://sdformat.org/schemas/root.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
 <sdf version='1.6'>
   <world name='default'>
+    <!-- Light Source -->
     <light name='sun' type='directional'>
-      <cast_shadows>0</cast_shadows>
+      <cast_shadows>false</cast_shadows>
       <pose frame=''>0 0 100 0 -0 0</pose>
       <diffuse>0.8 0.8 0.8 1</diffuse>
       <specular>0.1 0.1 0.1 1</specular>
