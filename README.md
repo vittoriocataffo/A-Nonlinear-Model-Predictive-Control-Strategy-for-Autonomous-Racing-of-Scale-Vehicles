@@ -239,7 +239,7 @@ Launching the simulation is quite simple, so as customizing it. However, some ac
 
 ```
 $ cd ~
-$ mkdir - p autosim_nmpc
+$ mkdir -p autosim_nmpc
 $ git clone -b nmpc_panoc https://github.com/vittoriocataffo/A-Nonlinear-Model-Predictive-Control-Strategy-for-Autonomous-Racing-of-Scale-Vehicles.git
 $ cd PANOC_DYNAMIC_MOTOR_MODEL
 $ python3 all_wheel_drive_PANOC_DINAMYC_motor_model.py
