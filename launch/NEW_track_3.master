@@ -1,0 +1,44 @@
+<?xml version='1.0'?>
+
+<launch>
+
+  <!-- global variables -->
+  <!-- NEW_track_1, NEW_track_2, and NEW_track_3 are predefined scenarios embedded with the simulation -->
+  <arg name='world_name' default='NEW_track_3' />
+
+  <!-- global map server -->
+  <!--
+  <node name='global_map_server' pkg='map_server' type='map_server' args='$(find f1tenth-sim)/map/race_track.yaml' output='screen'>
+    <param name='frame_id' value='map' />
+  </node>
+  <remap from='map' to='/map' /> -->
+
+  <!-- spawn car_1 and launch Gazebo -->
+  <include file='$(find f1tenth-sim)/config/one_car.launch.xml'> <!-- configuration file with car's parameters -->
+    <arg name='car_name' value='car_1' /> <!-- car's name for the visualization in Gazebo -->
+    <arg name='x_pos' value='0.0' /> <!-- car's position along x-axis -->
+    <arg name='y_pos' value='0.0' /> <!-- car's position along y-axis -->
+    <arg name='paint' value='Yellow' /> <!-- car's color -->
+    <arg name='run_gazebo' value='true' /> <!-- in case you want to rung Gazebo - Enable GUI -->
+    <arg name='world_name' value='$(arg world_name)' /> <!-- name of the world file, i.e., line 6-->
+  </include>
+
+  <!-- spawn car_2 -->
+  
+  <!--include file='$(find f1tenth-sim)/config/one_car.launch.xml'>
+    <arg name='car_name' value='car_2' />
+    <arg name='x_pos' value='-8' />
+    <arg name='y_pos' value='8.5' />
+    <arg name='paint' value='Red' />
+  </include--> 
+
+  <!-- spawn car_3 -->
+  
+  <!--include file='$(find f1tenth-sim)/config/one_car.launch.xml'>
+    <arg name='car_name' value='car_3' />
+    <arg name='x_pos' value='-11.5' />
+    <arg name='y_pos' value='11' />
+    <arg name='paint' value='Green' />
+  </include-->
+
+</launch>
