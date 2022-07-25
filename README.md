@@ -179,6 +179,46 @@ then **logout and login again** (or restart) for this to take effect.
 
 - **clang**, following this [guide](https://github.com/rust-lang/rust-bindgen/blob/master/book/src/requirements.md). Why? OpEn uses CasADi to build certain functions in C, which then need to be called from OpEn's core solver in Rust. For that purpose we need **bindgen**, which requires **clang**.
 
+2. Python Interface
+
+As simple as `pip install opengen`. You might need to prepend `sudo` on some Linux systems. Note that OpEn requires Python **version 3.5 or newer**. You might, therefore, need to install it using `pip3 install opengen`.
+
+> OpEn may run on earlier versions of Python (as old as 2.7), but we cannot promise you that (the main difficulty being the installation of dependencies). In that case, it is strongly recommend that you use `virtualenv`. To install OpEn in a virtual environment, using `virtualenv`, you first need to create such an environment, then activate it, and lastly, install `opengen` as above using `pip`. That is, you need to run:
+>
+>```
+>virtualenv -p python3.6 venv36
+>source venv36/bin/activate
+>pip install opengen
+>```
+
+3. Install opengen
+
+Go into `optimization-engine/open-codegen` and create a virtual environment:
+
+```
+cd optimization-engine/open-codegen
+virtualenv -p python3.6 venvopen
+source venvopen/bin/activate
+python setup.py install
+```
+
+You're ready to go! It's a good idea to use an IDE, such as [PyCharm](https://www.jetbrains.com/pycharm/). Use the above virtual environment (`venvopen`) in PyCharm:
+
+- go to Run > Edit Configurations > Add new configuration
+- Script path: specify `main.py`
+- Working dir: `optimization-engine/open-codegen/opengen`
+- Python interpreter: `venvopen`
+
+Install OpEn in Rust is as easy as:
+
+```
+cd optimization-engine
+cargo build
+```
+
+If you need to use `opengen` - the Python interface of OpEn - with a local version of the Rust library, use `with_open_version(local_path=...)` in your code. Read the [advanced options](https://alphaville.github.io/optimization-engine/docs/python-advanced#build-options) for details.
+
+Further info can be found at the [link](https://alphaville.github.io/optimization-engine/docs/installation).
 
 Basic Usage
 ============
