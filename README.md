@@ -158,6 +158,28 @@ $ source ~/.bashrc
 OpEn Framework
 ===============
 
+Before you start, you need to install the OpEn framework and its requirements.
+
+1. **Rust**, following the official [installation guide](https://www.rust-lang.org/tools/install),
+- Why? The Rust compiler is an essential component of OpEn; you will most likely not need to write (or compile yourself) any Rust code, but OpEn's Python/MATLAB interface will need the compiler to build your optimizer
+- How? Follow the [instructions](https://www.rust-lang.org/tools/install); in a nutshell, on Linux and MacOSX run:
+
+```
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+```
+
+and add `/.cargo/bin` to your path - e.g., on Linux, put the following line in your `~/.profile` file:
+
+```
+# Add this to your ~/.profile file
+export PATH="$HOME/.cargo/bin:$PATH"
+```
+
+then **logout and login again** (or restart) for this to take effect.
+
+- **clang**, following this [guide](https://github.com/rust-lang/rust-bindgen/blob/master/book/src/requirements.md). Why? OpEn uses CasADi to build certain functions in C, which then need to be called from OpEn's core solver in Rust. For that purpose we need **bindgen**, which requires **clang**.
+
+
 Basic Usage
 ============
 
