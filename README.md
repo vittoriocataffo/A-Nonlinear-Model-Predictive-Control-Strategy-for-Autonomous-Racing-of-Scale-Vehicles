@@ -218,12 +218,67 @@ cargo build
 
 If you need to use `opengen` - the Python interface of OpEn - with a local version of the Rust library, use `with_open_version(local_path=...)` in your code. Read the [advanced options](https://alphaville.github.io/optimization-engine/docs/python-advanced#build-options) for details.
 
+At the end, you need to add the following lines in your `.bashrc` file
+
+```
+# Install Ruby Gems to ~/gems
+export GEM_HOME="$HOME/gems"
+export PATH="$HOME/gems/bin:$PATH"
+
+# Add this to your ~/.profile file
+export PATH="$HOME/.cargo/bin:$PATH"
+. "$HOME/.cargo/env"
+```
+
 Further info can be found at the [link](https://alphaville.github.io/optimization-engine/docs/installation).
 
 Basic Usage
 ============
 
-Launching the simulation is quite simple, so as customizing it. However, some actions should be performed before running the scripts. 
+Launching the simulation is quite simple, so as customizing it. However, some actions should be performed before running the scripts, such as building the NMPC controller.
+
+```
+$ cd ~
+$ mkdir - p autosim_nmpc
+$ git clone -b nmpc_panoc https://github.com/vittoriocataffo/A-Nonlinear-Model-Predictive-Control-Strategy-for-Autonomous-Racing-of-Scale-Vehicles.git
+$ cd PANOC_DYNAMIC_MOTOR_MODEL
+$ python3 all_wheel_drive_PANOC_DINAMYC_motor_model.py
+$ python3 main_loop_DYNAMIC_motor.py
+$ pythone3 PANOC_DINAMYC_motor_model.py
+$ cd ../OBS_PANOC_DYNAMIC_MOTOR_MODEL
+$ python3 OBS_all_wheel_drive_PANOC_DINAMYC_motor_model.py
+$ python3 OBS_main_loop_DYNAMIC_motor.py
+$ python3 OBS_PANOC_DINAMYC_motor_model.py
+```
+
+The result will be a folder entitled `dynamic_my_optimizer` containing the build of the NMPC. To make everything work, it is fundamental to correct link the generated file with the scripts running of controller running along with the simulation. Therefore, att the end of the building process, you need to follow the instruction reported at terminal line. In other words,
+
+1. Edit the path provided as argument to the function `sys.path.insert` in the files entitled `OBS_all_wheel_drive_NEW_MOTOR_PANOC_my_mpc_node_DYNAMIC.py`, `NEW_MOTOR_PANOC_my_mpc_node_DYNAMIC_OBS.py`, `NEW_MOTOR_PANOC_my_mpc_node_DYNAMIC.py`and `all_wheel_drive_NEW_MOTOR_PANOC_my_mpc_node_DYNAMIC.py` contained in the `autosim_ws/src/simulator/scripts` folder. This will connect the built NMPC controller with the scripts running the simulation.
+
+2. Import the maps of the scenarios contained in the `Map_track1`, `Map_track2` and `Map_track3` folders. To do that, you need to edit the path of the function `csv_file = np.genfromtxt` with that where the `autosim_nmpc` folder is located. 
+
+3. Finally, you need to edit the path provided as argument of the function `f = open`. This can be located everywhere on your machine. This will contain the csv files saved by running the Gazebo simulation. In case you are going to save the files in a folder, do not forget to create the folder (`mkdir -p path/NAME_FOLDER`) before adding to the Python script.
+
+> **Note**. In case you should get back with the error `ERROR: cannot launch node of type [f1tenth-sim/set_racecar_state.py]: Cannot locate node of type [set_racecar_state.py] in package [f1tenth-sim]. Make sure file exists in package path and permission is set to executable (chmod +x)`, you need to give the right permissions to the Python scripts by runnin the command 
+> 
+>  ```
+>  $ cd ~/autosim_ws/src/simulator/src 
+>  $ chmod +x set_racecar_state.py
+>  ```
+
+> **Note**. A nice feature to have before running the simulation is to replace the standard Gazebo texture for the asphalt with that provided along with the repository. To do that, in case of Ubuntu 20.04 with Gazebo 11, simply execute the commands 
+
+```
+$ cd ~/autosim/gazebo
+$ sudo cp road1.jpg /usr/share/gazebo-11/media/materials/textures
+```
+
+while in case of Ubuntu 18.04 with Gazebo 9
+
+```
+$ cd ~/autosim/gazebo
+$ sudo cp road1.jpg /usr/share/gazebo-9/media/materials/textures
+```
 
 Now, you can run in a terminal the command:
 
