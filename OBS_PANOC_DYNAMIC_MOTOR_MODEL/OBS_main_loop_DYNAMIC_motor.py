@@ -1,5 +1,5 @@
 import sys
-sys.path.insert(1, "/home/vittorix/Scrivania/OBS PANOC DYNAMIC MOTOR MODEL/dynamic_my_optimizer/dynamic_racing_target_point")
+sys.path.insert(1, "/home/gsilano/Pictures/OBS_PANOC_DYNAMIC_MOTOR_MODEL/dynamic_my_optimizer/dynamic_racing_target_point")
 import dynamic_racing_target_point
 solver = dynamic_racing_target_point.solver()
 
