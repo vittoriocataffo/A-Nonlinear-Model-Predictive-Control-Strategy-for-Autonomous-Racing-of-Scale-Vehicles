@@ -47,11 +47,11 @@ $ sudo apt update
 $ sudo apt install ros-noetic-desktop-full ros-noetic-joy ros-noetic-control-toolbox
 $ sudo apt install python3-vcstool python3-catkin-tools protobuf-compiler libgoogle-glog-dev
 $ sudo apt install python3 python
+$ sudo apt install python3-rosdep python3-wstool ros-noetic-ros 
 $ sudo rosdep init
 $ rosdep update
 $ echo "source /opt/ros/noetic/setup.bash" >> ~/.bashrc
 $ source ~/.bashrc
-$ sudo apt-get install python3-rosdep python3-wstool ros-noetic-ros libgoogle-glog-dev
 ```
 
 2. Install all packages for Simultaneous Localization and Mapping (SLAM) and F1TENTH preliminaries
@@ -107,12 +107,12 @@ $ sudo apt-key adv --keyserver 'hkp://keyserver.ubuntu.com:80' --recv-key C1CF6E
 $ sudo apt update
 $ sudo apt install ros-melodic-desktop-full ros-melodic-joy ros-melodic-control-toolbox
 $ sudo apt install python-wstool python-catkin-tools protobuf-compiler libgoogle-glog-dev
+$ sudo apt install python3 python
+$ sudo apt install python-rosinstall python-rosinstall-generator build-essential
 $ sudo rosdep init
 $ rosdep update
 $ echo "source /opt/ros/melodic/setup.bash" >> ~/.bashrc
 $ source ~/.bashrc
-$ sudo apt install python-rosinstall python-rosinstall-generator build-essential
-
 ```
 
 2. Install all packages for Simultaneous Localization and Mapping (SLAM) and F1TENTH preliminaries
@@ -222,6 +222,38 @@ Further info can be found at the [link](https://alphaville.github.io/optimizatio
 
 Basic Usage
 ============
+
+Launching the simulation is quite simple, so as customizing it. However, some actions should be performed before running the scripts. 
+
+Now, you can run in a terminal the command:
+
+```
+$ roslaunch f1tenth-sim NEW_track_3.master
+```
+and in a seperate terminal window
+
+```
+$ rosrun f1tenth-sim all_wheel_drive_NEW_MOTOR_PANOC_my_mpc_node_DYNAMIC.py
+```
+
+To run a simulation considering obstacles placed along the track:
+
+```
+$ roslaunch f1tenth-sim NEW_track_3_OBS.master
+```
+
+and in a separate terminal window
+
+```
+$ rosrun f1tenth-sim OBS_all_wheel_drive_NEW_MOTOR_PANOC_my_mpc_node_DYNAMIC.py
+```
+
+You may decide to modify the parameters used by the controller to simulate the vehicle dynamics within the time horizon. Below is a legend with the available Python scripts and the parameters used.
+
+- `NEW_MOTOR_PANOC_my_mpc_node_DYNAMIC.py` It considers the model parameters as described in [the paper](https://www.sciencedirect.com/science/article/pii/S2405896320322722).
+- `NEW_MOTOR_PANOC_my_mpc_node_DYNAMIC_OBS.py` It considers the model parameters as described in [the paper](https://www.sciencedirect.com/science/article/pii/S2405896320322722).
+- `all_wheel_drive_NEW_MOTOR_PANOC_my_mpc_node_DYNAMIC.py` It considers the identified model parameters as described in [the paper](https://github.com/vittoriocataffo/A-Nonlinear-Model-Predictive-Control-Strategy-for-Autonomous-Racing-of-Scale-Vehicles/wiki/Publications).
+- `OBS_all_wheel_drive_NEW_MOTOR_PANOC_my_mpc_node_DYNAMIC.py`. It considers the identified model parameters as described in [the paper](https://github.com/vittoriocataffo/A-Nonlinear-Model-Predictive-Control-Strategy-for-Autonomous-Racing-of-Scale-Vehicles/wiki/Publications).
 
 Bugs & Feature Requests
 ========================
