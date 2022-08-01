@@ -323,4 +323,4 @@ In this section a video providing the effectiveness of the platform and how it w
 
 [![NMPC strategy for Autonomous Racing of Scale Vehicles](https://github.com/vittoriocataffo/A-Nonlinear-Model-Predictive-Control-Strategy-for-Autonomous-Racing-of-Scale-Vehicles/wiki/img/cover_SMC22.png)](https://youtu.be/w5c328rQmX4 "NMPC strategy for Autonomous Racing of Scale Vehicles")
 
-
+[![NMPC strategy for Autonomous Racing of Scale Vehicles](https://github.com/vittoriocataffo/A-Nonlinear-Model-Predictive-Control-Strategy-for-Autonomous-Racing-of-Scale-Vehicles/wiki/img/cover_SMC22.png)](https://youtu.be/pHMrH6_FPro "Trajectory comparison")
