@@ -19,7 +19,7 @@ This repository is an extension of the [F1TENTH simulator](https://github.com/f1
   issn = {},
   month = October,
   link = {},
-  preprint = {https://giuseppesilano.net/publications/SMC22.pdf}
+  preprint = {https://www.researchgate.net/publication/362293239_A_Nonlinear_Model_Predictive_Control_Strategy_for_Autonomous_Racing_of_Scale_Vehicles},
 }
 ```
 If you are using this simulator for research purposes especially for your publication, please take a look at the [Publications page](https://github.com/vittoriocataffo/A-Nonlinear-Model-Predictive-Control-Strategy-for-Autonomous-Racing-of-Scale-Vehicles/wiki/Publications). 
