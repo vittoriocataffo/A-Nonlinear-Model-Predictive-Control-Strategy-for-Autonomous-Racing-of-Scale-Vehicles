@@ -243,11 +243,11 @@ $ mkdir -p autosim_nmpc
 $ git clone -b nmpc_panoc https://github.com/vittoriocataffo/A-Nonlinear-Model-Predictive-Control-Strategy-for-Autonomous-Racing-of-Scale-Vehicles.git
 $ cd PANOC_DYNAMIC_MOTOR_MODEL
 $ python3 all_wheel_drive_PANOC_DINAMYC_motor_model.py
-$ python3 main_loop_DYNAMIC_motor.py
+<!--- $ python3 main_loop_DYNAMIC_motor.py -->
 $ pythone3 PANOC_DINAMYC_motor_model.py
 $ cd ../OBS_PANOC_DYNAMIC_MOTOR_MODEL
 $ python3 OBS_all_wheel_drive_PANOC_DINAMYC_motor_model.py
-$ python3 OBS_main_loop_DYNAMIC_motor.py
+<!--- $ python3 OBS_main_loop_DYNAMIC_motor.py -->
 $ python3 OBS_PANOC_DINAMYC_motor_model.py
 ```
 
