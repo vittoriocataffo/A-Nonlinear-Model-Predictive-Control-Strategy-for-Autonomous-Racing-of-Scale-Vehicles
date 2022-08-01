@@ -243,18 +243,16 @@ $ mkdir -p autosim_nmpc
 $ git clone -b nmpc_panoc https://github.com/vittoriocataffo/A-Nonlinear-Model-Predictive-Control-Strategy-for-Autonomous-Racing-of-Scale-Vehicles.git
 $ cd PANOC_DYNAMIC_MOTOR_MODEL
 $ python3 all_wheel_drive_PANOC_DINAMYC_motor_model.py
-$ python3 PANOC_DINAMYC_motor_model.py
 $ cd ../OBS_PANOC_DYNAMIC_MOTOR_MODEL
 $ python3 OBS_all_wheel_drive_PANOC_DINAMYC_motor_model.py
-$ python3 OBS_PANOC_DINAMYC_motor_model.py
 ```
 
-> **Note**. The `OBS_main_loop_DYNAMIC_motor.py` and `main_loop_DYNAMIC_motor.py` Python scripts are not fundamental for the bulding process of the Nonlinear Model Predictive (NMPC) controller. They are only meant to test the NMPC out of the F1/10 simulator after the building phase.
+> **Note**. The `OBS_main_loop_DYNAMIC_motor.py` and `main_loop_DYNAMIC_motor.py` Python scripts are not fundamental for the bulding process of the Nonlinear Model Predictive (NMPC) controller. They are only meant to test the NMPC out of the F1/10 simulator after the building phase. To do that, in `OBS_main_loop_DYNAMIC_motor.py` and `main_loop_DYNAMIC_motor.py` edit the path provided as argument to the function `sys.path.insert`.
 
 
 The result will be a folder entitled `dynamic_my_optimizer` containing the build of the NMPC. To make everything work, it is fundamental to correct link the generated file with the scripts running of controller running along with the simulation. Therefore, att the end of the building process, you need to follow the instruction reported at terminal line. In other words,
 
-1. Edit the path provided as argument to the function `sys.path.insert` in the files entitled `OBS_all_wheel_drive_NEW_MOTOR_PANOC_my_mpc_node_DYNAMIC.py`, `NEW_MOTOR_PANOC_my_mpc_node_DYNAMIC_OBS.py`, `NEW_MOTOR_PANOC_my_mpc_node_DYNAMIC.py`and `all_wheel_drive_NEW_MOTOR_PANOC_my_mpc_node_DYNAMIC.py` contained in the `autosim_ws/src/simulator/scripts` folder. This will connect the built NMPC controller with the scripts running the simulation.
+1. Edit the path provided as argument to the function `sys.path.insert` in the files entitled `OBS_all_wheel_drive_NEW_MOTOR_PANOC_my_mpc_node_DYNAMIC.py` and `all_wheel_drive_NEW_MOTOR_PANOC_my_mpc_node_DYNAMIC.py` contained in the `autosim_ws/src/simulator/scripts` folder. This will connect the built NMPC controller with the scripts running the simulation.
 
 2. Import the maps of the scenarios contained in the `Map_track1`, `Map_track2` and `Map_track3` folders. To do that, you need to edit the path of the function `csv_file = np.genfromtxt` with that where the `autosim_nmpc` folder is located. 
 
