@@ -243,10 +243,8 @@ $ mkdir -p autosim_nmpc
 $ git clone -b nmpc_panoc https://github.com/vittoriocataffo/A-Nonlinear-Model-Predictive-Control-Strategy-for-Autonomous-Racing-of-Scale-Vehicles.git
 $ cd PANOC_DYNAMIC_MOTOR_MODEL
 $ python3 all_wheel_drive_PANOC_DINAMYC_motor_model.py
-<!--- $ python3 PANOC_DINAMYC_motor_model.py --> 
 $ cd ../OBS_PANOC_DYNAMIC_MOTOR_MODEL
 $ python3 OBS_all_wheel_drive_PANOC_DINAMYC_motor_model.py
-<!--- $ python3 OBS_PANOC_DINAMYC_motor_model.py -->
 ```
 
 > **Note**. The `OBS_main_loop_DYNAMIC_motor.py` and `main_loop_DYNAMIC_motor.py` Python scripts are not fundamental for the bulding process of the Nonlinear Model Predictive (NMPC) controller. They are only meant to test the NMPC out of the F1/10 simulator after the building phase. To do that, in `OBS_main_loop_DYNAMIC_motor.py` and `main_loop_DYNAMIC_motor.py` edit the path provided as argument to the function `sys.path.insert`.
