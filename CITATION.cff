@@ -1,0 +1,23 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+preferred-citation:
+  type: conference
+  authors:
+  - family-names: "Cataffo"
+    given-names: "Vittorio"
+  - family-names: "Silano"
+    given-names: "Giuseppe"
+    orcid: "https://orcid.org/0000-0002-6816-6002"
+  - family-names: "Iannelli"
+    given-names: "Luigi"
+    orcid: "https://orcid.org/0000-0003-2034-0005"
+  - family-names: "Puig"
+    given-names: "Vicenç"
+    orcid: "https://orcid.org/0000-0002-6364-6429"
+ - family-names: "Glielmo"
+    given-names: "Luigi"
+    orcid: "https://orcid.org/0000-0003-2753-1787"
+  title: "A Nonlinear Model Predictive Control Strategy for Autonomous Racing of Scale Vehicles"
+  publisher: "IEEE"
+  preprint: "https://giuseppesilano.net/publications/SMC22.pdf"
+  booktitle: "2022 IEEE International Conference on Systems, Man, and Cybernetics (SMC)"
