@@ -14,11 +14,12 @@ This repository is an extension of the [F1TENTH simulator](https://github.com/f1
   booktitle = {2022 IEEE International Conference on Systems, Man and Cybernetics (SMC)}},
   title = {{A Nonlinear Model Predictive Control Strategy for Autonomous Racing of Scale Vehicles}},
   year = {2022},
-  pages = {--},
-  doi = {},
-  issn = {},
+  isbn = {978-1-6654-5258-8},
+  issn = {2577-1655},
   month = October,
-  link = {},
+  link = {https://ieeexplore.ieee.org/document/9945279},
+  pages = {100--105},
+  doi = {10.1109/SMC53654.2022.9945279}}
   preprint = {https://www.researchgate.net/publication/362293239_A_Nonlinear_Model_Predictive_Control_Strategy_for_Autonomous_Racing_of_Scale_Vehicles},
 }
 ```
